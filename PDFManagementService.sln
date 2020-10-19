@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFManagementService", "PDFManagementService\PDFManagementService.csproj", "{E83476F9-F742-4013-946F-F3CAD32A432B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFManagementService.Tests", "PDFManagementService.Tests\PDFManagementService.Tests.csproj", "{CED1E7E0-E45A-4E1F-9FD2-70641BB18E30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E83476F9-F742-4013-946F-F3CAD32A432B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83476F9-F742-4013-946F-F3CAD32A432B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83476F9-F742-4013-946F-F3CAD32A432B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83476F9-F742-4013-946F-F3CAD32A432B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED1E7E0-E45A-4E1F-9FD2-70641BB18E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED1E7E0-E45A-4E1F-9FD2-70641BB18E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED1E7E0-E45A-4E1F-9FD2-70641BB18E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED1E7E0-E45A-4E1F-9FD2-70641BB18E30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30FFB9A1-2DEE-4D30-A9D7-F3E6C53EA188}
+	EndGlobalSection
+EndGlobal
