@@ -1,5 +1,5 @@
 # PDFManagementService
-This is a .NET CORE RESFUL API to manage pdf files on Azure Blob Storage.
+This is a .NET CORE RESTFUL API to manage pdf files on Azure Blob Storage.
 It has been tested with Azurite as this was the only Azure Blob Storage Emulator available on Mac.
 
 Created: 18/10/2020
