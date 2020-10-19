@@ -105,7 +105,7 @@ namespace PDFManagementService.Services
         /// <returns>the file</returns>
         public File GetFile(string fileName)
         {
-            try 
+            try
             {
                 var blobClient = this._blobContainerClient.GetBlobClient(fileName);
                 var blobdownloadInfo = blobClient.Download();
@@ -307,26 +307,5 @@ namespace PDFManagementService.Services
                 throw ex;
             }
         }
-
-        /*private void SwapFileOrder(string sourceFilename, string targetFilename)
-        {
-            try
-            {
-                var blobClientSource = this._blobContainerClient.GetBlobClient(sourceFilename);
-                var blobClientTarget = this._blobContainerClient.GetBlobClient(targetFilename);
-
-                if (blobClientSource != null && blobClientTarget != null)
-                {
-                    var sourceTags = blobClientSource.GetTags().Value.Tags;
-                    blobClientSource.SetTags(blobClientTarget.GetTags().Value.Tags);
-                    blobClientTarget.SetTags(sourceTags);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Preserve and throw original stack trace for error tracking and debugging purposes. 
-                throw ex;
-            }
-        }*/
     }
 }

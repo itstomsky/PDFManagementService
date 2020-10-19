@@ -14,7 +14,7 @@ namespace PDFManagementService.Controllers
     /// <summary>
     /// The FilesController
     /// </summary>
-    [Route("FileManagementService/[controller]")]
+    [Route("PDFManagementService/[controller]")]
     [ApiController]
     public class FilesController : ControllerBase
     {
@@ -63,6 +63,7 @@ namespace PDFManagementService.Controllers
                 if (string.IsNullOrEmpty(fileName))
                     return BadRequest("FileName not provided");
 
+                fileName = this._blobService.filenameLookup[this._blobService.fileOrderLookup[fileName]];
                 if (this._blobService.CheckFileExists(fileName))
                 {
                     var file = this._blobService.GetFile(fileName);
@@ -182,6 +183,7 @@ namespace PDFManagementService.Controllers
                 if (string.IsNullOrEmpty(fileName))
                     return BadRequest("FileName not provided");
 
+                fileName = this._blobService.filenameLookup[this._blobService.fileOrderLookup[fileName]];
                 if (this._blobService.CheckFileExists(fileName))
                 {
                     if (this._blobService.DeleteFile(fileName))
