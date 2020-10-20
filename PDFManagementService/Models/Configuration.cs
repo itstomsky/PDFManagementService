@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace PDFManagementService.Models
 {
     /// <summary>
-    /// The File Config
+    /// Configuration for PDFManagementService
     /// </summary>
     public class Configuration
     {
