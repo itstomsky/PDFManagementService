@@ -169,8 +169,6 @@ namespace PDFManagementService.Services
         {
             try
             {
-                var files = new List<File>();
-
                 long currentFileOrder = this.fileOrderLookup[filename];
 
                 if (currentFileOrder > filePosition)
