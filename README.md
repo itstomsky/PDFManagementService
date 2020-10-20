@@ -8,7 +8,7 @@ Author: Thomas Varghese
 
 
 Upload (POST)
-http://hostname:port/api/file/uploadfile
+http://hostname:port/PDFManagementService/files/uploadfile
 
 Add "uploadedFile" attribute to body as form-data (add the pdf file to this attribute for uploading)
 
