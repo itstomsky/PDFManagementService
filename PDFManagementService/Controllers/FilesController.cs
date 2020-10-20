@@ -38,14 +38,14 @@ namespace PDFManagementService.Controllers
         /// </summary>
         /// <param name="blobService"></param>
         /// <param name="logger"></param>
-        /// <param name="fileConfig"></param>
-        public FilesController(IBlobStorageService blobService, ILogger<FilesController> logger, IOptions<Configuration> fileConfig)
+        /// <param name="configuration"></param>
+        public FilesController(IBlobStorageService blobService, ILogger<FilesController> logger, IOptions<Configuration> configuration)
         {
             this._blobService = blobService;
             this._blobService.GenerateLookup(); // Generate new lookups for reorder service
 
             this._logger = logger;
-            this._configuration = fileConfig;
+            this._configuration = configuration;
         }
 
         /// <summary>
@@ -223,19 +223,27 @@ namespace PDFManagementService.Controllers
                 if (filename == null || filePosition == 0)
                     return BadRequest("File name or position is invalid");
 
-                if (this._blobService.filenameLookup.Keys.Count > 1)
+                if (this._blobService.CheckFileExists(this._blobService.filenameLookup[this._blobService.fileOrderLookup[filename]]))
                 {
-                    if(filePosition > this._blobService.filenameLookup.Keys.Max())
+                    if (this._blobService.filenameLookup.Keys.Count > 1)
                     {
-                        filePosition = this._blobService.filenameLookup.Keys.Max();
-                    }
+                        if (filePosition > this._blobService.filenameLookup.Keys.Max())
+                        {
+                            filePosition = this._blobService.filenameLookup.Keys.Max();
+                        }
 
-                    return Ok(this._blobService.ReOrderFile(filename, filePosition));
+                        return Ok(this._blobService.ReOrderFile(filename, filePosition));
+                    }
+                    else
+                    {
+                        return BadRequest("Not enough files to re-order");
+                    }
                 }
                 else
                 {
-                    return BadRequest("Not enough files to re-order");
+                    return BadRequest("File Doesn't exist");
                 }
+                
             }
             catch (Exception ex)
             {
